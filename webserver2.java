@@ -72,12 +72,13 @@ final class HttpRequest implements Runnable{
     System.out.println("RequestLine:" + requestLine);
 
     // Extract the filename from the request line.
-    StringTokenizer tokens = new StringTokenizer(requestLine);// this is a input method with deliminators
+    String tokens[] = requestLine.split(" ");
+    // StringTokenizer tokens = new StringTokenizer(requestLine); Tokenizer is a Legacy Object
 
     // Store and display request method for checking
-    requestMethod = tokens.nextToken().trim();
+    requestMethod = tokens[0].trim();
     System.out.println("Requestmethod = " + requestMethod);
-    fileName = tokens.nextToken().replaceFirst("/", "");
+    fileName = tokens[1].replaceFirst("/", "");
     
     //Display fileName for checking
     System.out.println(fileName);
@@ -127,7 +128,7 @@ final class HttpRequest implements Runnable{
     FileInputStream fis = null;
     boolean fileExists = true;
     try {
-      fis = new FileInputStream("./" + fileName);
+      fis = new FileInputStream("./ccc/" + fileName);
     } catch (FileNotFoundException e) {
       fileExists = false;
     }
@@ -166,7 +167,7 @@ final class HttpRequest implements Runnable{
     //Send the entity body.
     if (fileExists) {
       if(fileName.endsWith(".php")){
-        Process proc = Runtime.getRuntime().exec("C:\\wamp64\\bin\\php\\php5.6.31\\php.exe " + fileName + " " + requestMethod + " " + formdata);
+        Process proc = Runtime.getRuntime().exec("C:\\wamp64\\bin\\php\\php5.6.31\\php.exe " + "ccc\\" + fileName + " " + requestMethod + " " + formdata);
         BufferedReader temp = new BufferedReader(new InputStreamReader(proc.getInputStream()));
 
         while ((line = temp.readLine()) != null) {
