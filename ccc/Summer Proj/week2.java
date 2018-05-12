@@ -53,7 +53,7 @@ public class week2 {
 //	    for(int i = 0; i < obj1.length; i++) {
 //	    	System.out.println(obj1[i].getString());
 //	    }
-	    quickSort temp1 = new quickSort(obj1, new sortBySecond());
+	    quickSort temp1 = new quickSort((Object[]) obj1, new sortBySecond());
 	    bubbleSort temp2 = new bubbleSort(obj2, new sortBySecond());
 	    mergeSort temp3 = new mergeSort(obj3, new sortBySecond());
 	    

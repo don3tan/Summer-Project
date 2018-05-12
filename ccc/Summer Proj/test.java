@@ -1,4 +1,4 @@
-public class test {
+public class test extends Object{
 	private String  a;
 	
 	public test(String a1) {

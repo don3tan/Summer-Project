@@ -3,13 +3,13 @@ import java.util.Random;
 
 public class quickSort {
 	
-	private test[] obj;
-	private Comparator<test> c;
+	private Object[] obj;
+	private Comparator<Object> c;
 	private int effCounter = 0;
-	private test[] container;
+	private Object[] container;
 	private Random rand = new Random();
 	
-	public quickSort(test[] obj, Comparator<test> c) {
+	public quickSort(Object[] obj, Comparator<Object> c) {
 		this.obj = obj;
 		this.c = c;
 		this.container = obj.clone();
@@ -25,7 +25,7 @@ public class quickSort {
 		int frontIn = startRange;
 		int backIn = endRange;
 		int randNum = rand.nextInt(endRange - startRange + 1) + startRange;
-		test pivot = obj[randNum];
+		Object pivot = obj[randNum];
 		
 		for(int i = startRange; i < endRange+1; i++) {
 			if(i != randNum) {	

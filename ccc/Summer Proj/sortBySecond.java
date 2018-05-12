@@ -1,8 +1,10 @@
 import java.util.Comparator;
 
-class sortBySecond implements Comparator<test>{
-	public int compare(test t1, test t2) {
-		if(t1.getString().charAt(1) > t2.getString().charAt(1)) {
+class sortBySecond implements Comparator<Object>{
+	public int compare(Object t1, Object t2) {
+		test t3 = (test) t1;
+		test t4 = (test) t2;
+		if( t3.getString().charAt(1) > t4.getString().charAt(1)) {
 			return 1;	
 		}
 		return 0;
