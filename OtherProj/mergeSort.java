@@ -1,14 +1,13 @@
 import java.util.Comparator;
-import java.util.Random;
 
-public class mergeSort {
+public class mergeSort <T> {
 	
-	private Object[] obj;
-	private Comparator<Object> c;
+	private T[] obj;
+	private Comparator<T> c;
 	private int effCounter = 0;
-	private Object[] container;
+	private T[] container;
 	
-	public mergeSort(Object[] obj, Comparator<Object> c) {
+	public mergeSort(T[] obj, Comparator<T> c) {
 		this.obj = obj;
 		this.c = c;
 		this.container = obj.clone();

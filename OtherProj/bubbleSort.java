@@ -1,13 +1,12 @@
 import java.util.Comparator;
-import java.util.Random;
 
-public class bubbleSort {
+public class bubbleSort <T> {
 	
-	private Object[] obj;
-	private Comparator<Object> c;
+	private T[] obj;
+	private Comparator<T> c;
 	private int effCounter = 0;
 	
-	public bubbleSort(Object[] obj, Comparator<Object> c) {
+	public bubbleSort(T[] obj, Comparator<T> c) {
 		this.obj = obj;
 		this.c = c;
 		
@@ -30,7 +29,7 @@ public class bubbleSort {
 	}
 	
 	public void swapPos(int pos1, int pos2) {
-		Object temp = obj[pos1];
+		T temp = obj[pos1];
 		obj[pos1] = obj[pos2];
 		obj[pos2] = temp;
 	}

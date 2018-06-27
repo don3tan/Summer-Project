@@ -1,15 +1,15 @@
 import java.util.Comparator;
 import java.util.Random;
 
-public class quickSort {
+public class quickSort <T> {
 	
-	private Object[] obj;
-	private Comparator<Object> c;
+	private T[] obj;
+	private Comparator<T> c;
 	private int effCounter = 0;
-	private Object[] container;
+	private T[] container;
 	private Random rand = new Random();
 	
-	public quickSort(Object[] obj, Comparator<Object> c) {
+	public quickSort(T[] obj, Comparator<T> c) {
 		this.obj = obj;
 		this.c = c;
 		this.container = obj.clone();
@@ -25,7 +25,7 @@ public class quickSort {
 		int frontIn = startRange;
 		int backIn = endRange;
 		int randNum = rand.nextInt(endRange - startRange + 1) + startRange;
-		Object pivot = obj[randNum];
+		T pivot = obj[randNum];
 		
 		for(int i = startRange; i < endRange+1; i++) {
 			if(i != randNum) {	
